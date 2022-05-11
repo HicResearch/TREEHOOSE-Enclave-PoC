@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale-1">
+<style>
+*{
+box-sizing: border-box;
+}
+* {
+box-sizing: border-box;
+}
+body {
+background-color: #f1f1f1;
+padding: 20px;
+font-family: Arial;
+}/* Center website */
+.main {
+ max-width: 1000px;
+ margin: auto;
+}
+h1 {
+font-size: 50px;
+word-break: break-all;
+}
+.row {
+  margin: 8px -16px;
+}
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide columns by default */
+}
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+/* Add a dark background color to the active button */
+.btn.active {
+  background-color: #666;
+   color: white;
+}
+    </style>
+</head>
+<body>
+<h2>MRI Sequence Classifier</h2>
+<div id = "BtnContainer">
+    <button class = "btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class = "btn active" onclick="filterSelection('T1')"> T1</button>
+    <button class = "btn active" onclick="filterSelection('T2')"> T2</button>
+   <button class = "btn active" onclick="filterSelection('MRA')"> MRA</button>
+   <button class = "btn active" onclick="filterSelection('PD')"> PD</button>
+   <button class = "btn active" onclick="filterSelection('DTI')"> DTI</button>
+</div>
+<!-- Gallery Grid -->
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI041-Guys-0706-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI041-Guys-0706-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI041-Guys-0706-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI041-Guys-0706-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI038-Guys-0729-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI038-Guys-0729-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI038-Guys-0729-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI038-Guys-0729-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI025-Guys-0852-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI025-Guys-0852-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI025-Guys-0852-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI025-Guys-0852-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI042-Guys-0725-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI042-Guys-0725-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI042-Guys-0725-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI042-Guys-0725-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI040-Guys-0724-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI040-Guys-0724-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI040-Guys-0724-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI040-Guys-0724-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI044-Guys-0712-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI044-Guys-0712-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI044-Guys-0712-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI044-Guys-0712-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI030-Guys-0708-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI030-Guys-0708-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI030-Guys-0708-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI030-Guys-0708-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI013-HH-1212-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI013-HH-1212-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI013-HH-1212-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI013-HH-1212-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI014-HH-1236-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI014-HH-1236-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI014-HH-1236-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI014-HH-1236-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI049-HH-1358-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI049-HH-1358-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI049-HH-1358-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI049-HH-1358-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI053-Guys-0727-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI053-Guys-0727-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI053-Guys-0727-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI053-Guys-0727-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI023-Guys-0699-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI023-Guys-0699-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI023-Guys-0699-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI023-Guys-0699-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI034-HH-1260-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI034-HH-1260-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI034-HH-1260-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI034-HH-1260-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI022-Guys-0701-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI022-Guys-0701-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI022-Guys-0701-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI022-Guys-0701-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI020-Guys-0700-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI020-Guys-0700-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI020-Guys-0700-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI020-Guys-0700-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI002-Guys-0828-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI002-Guys-0828-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI002-Guys-0828-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI002-Guys-0828-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI016-Guys-0697-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI016-Guys-0697-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI016-Guys-0697-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI016-Guys-0697-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI046-Guys-0824-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI046-Guys-0824-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI046-Guys-0824-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI046-Guys-0824-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI021-Guys-0703-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI021-Guys-0703-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI021-Guys-0703-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI021-Guys-0703-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI026-Guys-0696-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI026-Guys-0696-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI026-Guys-0696-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI026-Guys-0696-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI015-HH-1258-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI015-HH-1258-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI015-HH-1258-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI015-HH-1258-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI017-Guys-0698-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI017-Guys-0698-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI017-Guys-0698-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI017-Guys-0698-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI043-Guys-0714-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI043-Guys-0714-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI043-Guys-0714-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI043-Guys-0714-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI050-Guys-0711-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI050-Guys-0711-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI050-Guys-0711-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI050-Guys-0711-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI048-HH-1326-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI048-HH-1326-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI048-HH-1326-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI048-HH-1326-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI024-Guys-0705-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI024-Guys-0705-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI024-Guys-0705-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI024-Guys-0705-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI039-HH-1261-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI039-HH-1261-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI039-HH-1261-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI039-HH-1261-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI012-HH-1211-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI012-HH-1211-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI012-HH-1211-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI012-HH-1211-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI019-Guys-0702-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI019-Guys-0702-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI019-Guys-0702-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI019-Guys-0702-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI028-Guys-1038-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI028-Guys-1038-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI028-Guys-1038-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI028-Guys-1038-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI027-Guys-0710-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI027-Guys-0710-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI027-Guys-0710-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI027-Guys-0710-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI029-Guys-0829-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI029-Guys-0829-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI029-Guys-0829-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI029-Guys-0829-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI051-HH-1328-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI051-HH-1328-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI051-HH-1328-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI051-HH-1328-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI037-Guys-0704-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI037-Guys-0704-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI037-Guys-0704-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI037-Guys-0704-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI031-Guys-0797-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI031-Guys-0797-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI031-Guys-0797-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI031-Guys-0797-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T1">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI035-IOP-0873-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI035-IOP-0873-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI035-IOP-0873-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI035-IOP-0873-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI052-HH-1343-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI052-HH-1343-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI052-HH-1343-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI052-HH-1343-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI033-HH-1259-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI033-HH-1259-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI033-HH-1259-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI033-HH-1259-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI036-Guys-0736-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI036-Guys-0736-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI036-Guys-0736-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI036-Guys-0736-T1.jpg', 'T1')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI045-Guys-0713-T1.jpg" alt="T1" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI045-Guys-0713-T1.jpg" >T1</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI045-Guys-0713-T1.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T1/IXI045-Guys-0713-T1.jpg', 'T1')"> ok</button>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI038-Guys-0729-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI038-Guys-0729-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI038-Guys-0729-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI038-Guys-0729-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI025-Guys-0852-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI025-Guys-0852-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI025-Guys-0852-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI025-Guys-0852-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI042-Guys-0725-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI042-Guys-0725-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI042-Guys-0725-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI042-Guys-0725-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI040-Guys-0724-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI040-Guys-0724-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI040-Guys-0724-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI040-Guys-0724-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI041-Guys-0706-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI041-Guys-0706-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI041-Guys-0706-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI041-Guys-0706-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI014-HH-1236-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI014-HH-1236-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI014-HH-1236-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI014-HH-1236-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI049-HH-1358-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI049-HH-1358-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI049-HH-1358-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI049-HH-1358-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI044-Guys-0712-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI044-Guys-0712-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI044-Guys-0712-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI044-Guys-0712-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI030-Guys-0708-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI030-Guys-0708-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI030-Guys-0708-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI030-Guys-0708-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI013-HH-1212-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI013-HH-1212-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI013-HH-1212-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI013-HH-1212-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI023-Guys-0699-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI023-Guys-0699-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI023-Guys-0699-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI023-Guys-0699-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI034-HH-1260-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI034-HH-1260-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI034-HH-1260-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI034-HH-1260-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI053-Guys-0727-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI053-Guys-0727-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI053-Guys-0727-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI053-Guys-0727-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI002-Guys-0828-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI002-Guys-0828-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI002-Guys-0828-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI002-Guys-0828-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI016-Guys-0697-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI016-Guys-0697-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI016-Guys-0697-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI016-Guys-0697-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI046-Guys-0824-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI046-Guys-0824-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI046-Guys-0824-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI046-Guys-0824-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI022-Guys-0701-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI022-Guys-0701-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI022-Guys-0701-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI022-Guys-0701-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI020-Guys-0700-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI020-Guys-0700-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI020-Guys-0700-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI020-Guys-0700-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI015-HH-1258-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI015-HH-1258-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI015-HH-1258-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI015-HH-1258-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI017-Guys-0698-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI017-Guys-0698-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI017-Guys-0698-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI017-Guys-0698-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI043-Guys-0714-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI043-Guys-0714-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI043-Guys-0714-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI043-Guys-0714-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI050-Guys-0711-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI050-Guys-0711-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI050-Guys-0711-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI050-Guys-0711-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI021-Guys-0703-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI021-Guys-0703-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI021-Guys-0703-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI021-Guys-0703-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI026-Guys-0696-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI026-Guys-0696-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI026-Guys-0696-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI026-Guys-0696-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI012-HH-1211-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI012-HH-1211-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI012-HH-1211-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI012-HH-1211-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI019-Guys-0702-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI019-Guys-0702-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI019-Guys-0702-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI019-Guys-0702-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI028-Guys-1038-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI028-Guys-1038-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI028-Guys-1038-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI028-Guys-1038-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI027-Guys-0710-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI027-Guys-0710-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI027-Guys-0710-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI027-Guys-0710-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI029-Guys-0829-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI029-Guys-0829-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI029-Guys-0829-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI029-Guys-0829-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI048-HH-1326-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI048-HH-1326-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI048-HH-1326-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI048-HH-1326-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI024-Guys-0705-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI024-Guys-0705-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI024-Guys-0705-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI024-Guys-0705-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI039-HH-1261-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI039-HH-1261-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI039-HH-1261-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI039-HH-1261-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI031-Guys-0797-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI031-Guys-0797-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI031-Guys-0797-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI031-Guys-0797-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI051-HH-1328-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI051-HH-1328-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI051-HH-1328-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI051-HH-1328-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI037-Guys-0704-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI037-Guys-0704-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI037-Guys-0704-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI037-Guys-0704-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+<div class="row">
+  <div class="column T2">
+    <div class="content">
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI045-Guys-0713-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI045-Guys-0713-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI045-Guys-0713-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI045-Guys-0713-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI035-IOP-0873-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI035-IOP-0873-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI035-IOP-0873-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI035-IOP-0873-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI052-HH-1343-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI052-HH-1343-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI052-HH-1343-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI052-HH-1343-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI033-HH-1259-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI033-HH-1259-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI033-HH-1259-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI033-HH-1259-T2.jpg', 'T2')"> ok</button>
+      <img src="file:///Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI036-Guys-0736-T2.jpg" alt="T2" style="width:50%">
+      <textarea id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI036-Guys-0736-T2.jpg" >T2</textarea>
+<button class = "btn active"  button id = "/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI036-Guys-0736-T2.jpgb" onclick="captureLabel('/Users/esmamansouri/DUNDEE/Dundee/WP3/Autoencoder-image-search-master/MRISeq/IXItest/T2/IXI036-Guys-0736-T2.jpg', 'T2')"> ok</button>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<script language="JScript">
+function captureLabel(name, label) {
+var new_label = document.getElementById(name).value;
+document.getElementById(name).value ="TEST";
+var old_label = label;
+var new_line = new_label.concat(',' , name);
+var old_line = old_label.concat(',' , name);
+var textToSave = new_line;
+var hiddenElement = document.createElement('a');
+hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+hiddenElement.target = '_blank';
+hiddenElement.download = 'file///Users/esmamansouri/PycharmProjects/WP3_SMI/output/MRI_Sequence_Results_corrected.txt';
+hiddenElement.click();
+}
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+ for (i = 0; i < x.length; i++) {
+   w3RemoveClass(x[i], "show");
+   if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+ }
+}
+// Show filtered elements
+function w3AddClass(element, name) {
+ var i, arr1, arr2;
+ arr1 = element.className.split(" ");
+ arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+   if (arr1.indexOf(arr2[i]) == -1) {
+     element.className += " " + arr2[i];
+  }
+ }
+}
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+ var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+ arr2 = name.split(" ");
+ for (i = 0; i < arr2.length; i++) {
+   while (arr1.indexOf(arr2[i]) > -1) {
+     arr1.splice(arr1.indexOf(arr2[i]), 1);
+   }
+ }
+ element.className = arr1.join(" ");
+}
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+ btns[i].addEventListener("click", function(){
+   var current = document.getElementsByClassName("active");
+   current[0].className = current[0].className.replace(" active", "");
+   this.className += " active";
+  });
+}
+</script>
+</div>
+</body>
+</html>

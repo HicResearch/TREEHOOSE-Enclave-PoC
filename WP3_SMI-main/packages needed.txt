@@ -1,0 +1,10 @@
+tensorflow
+sklearn
+matplotlib
+opencv-python
+nibabel
+pydicom
+
+change projectpath and path
+
+line34 bug
