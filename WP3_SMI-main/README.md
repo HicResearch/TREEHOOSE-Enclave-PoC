@@ -1,1 +1,1 @@
-# WP3_SMI
+# Secure Enclave PoC
