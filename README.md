@@ -13,14 +13,27 @@ step 5 make sure the following packages are installed for the project
       
   * tensorflow
   * sklearn
-  * matplotlib
   * opencv-python
   * nibabel
   * pydicom
 
-step 6 open the `SVM_classifier_tester.py` script and edit line 27 to point to `TREEHOOSE-Enclave-PoC/Main/` folder, and line 29 to point to `TREEHOOSE-Enclave-PoC/Data/` folder, the following is an example for those two lines. the "/" by the end of the folder is required
-      
-    project_path = 'C:/Users/cgao001/OneDrive - University of Dundee/HIC research/3 hic/TreeHoose-enclave/WP3_SMI-main/'
-    path = 'C:/Users/cgao001/OneDrive - University of Dundee/HIC research/3 hic/TreeHoose-enclave/TREEHOOSE-Enclave-PoC-main/Data/'
+step 6 run the script `python Main/SVM_classifier_tester.py`, you should get a file `MRI_Sequence_Results.txt` in `TREEHOOSE-Enclave-PoC/Main/output` folder if you are successful.
 
-step 7 run the script `python SVM_classifier_tester.py`, you should get a file `MRI_Sequence_Results.txt` in `TREEHOOSE-Enclave-PoC/Main/output` folder if you are successful.
+**Optional** 
+
+To change the default paths use the script's arguments:
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -m MODEL, --model MODEL
+                            path to trained autoencoder
+      -s SVM, --SVM SVM     path to SVM index file
+      -d DATA, --data DATA  path image data
+      -o OUT, --out OUT     output path
+
+The defaults are:
+
+    python Main/SVM_classifier_tester.py -m Main/output/autoencoderMRI.h5 \\
+    -s Main/output/MRI_Sequence_SVMClassifier.pkl -d Data/ -o Main/output/
+
+

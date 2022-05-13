@@ -24,30 +24,27 @@ import os
 import csv
 
 
-project_path = 'C:/Users/cgao001/OneDrive - University of Dundee/HIC research/3 hic/TreeHoose-enclave/WP3_SMI-main/'
-
-path = 'C:/Users/cgao001/OneDrive - University of Dundee/HIC research/3 hic/TreeHoose-enclave/Data/'
-
-
+project_path = './Main/'
+path = './Data/'
+out_path = project_path + 'output/'
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-m", "--model", type=str, required=False, default = project_path+'output/autoencoderMRI.h5',
 	help="path to trained autoencoder")
 ap.add_argument("-s", "--SVM", type=str, required=False, default = project_path+'output/MRI_Sequence_SVMClassifier.pkl',
 	help="path to SVM index file")
+ap.add_argument("-d", "--data", type=str, required=False, default=path, help="path image data")
+ap.add_argument("-o", "--out", type=str, required=False, default=out_path, help="output path")
 '''ap.add_argument("-s", "--sample", type=int, default=10,
 	help="# of testing queries to perform")'''
 args = vars(ap.parse_args())
-args = vars(ap.parse_args())
+path = args["data"]
+out_path = args["out"]
+
 # load the dataset
 print("[INFO] loading dataset...")
-#path = '/home/azureuser/PycharmProjects/WP3/'
-
-
-
 
 # get features
-
 clf1 = pickle.load(open(args["SVM"], 'rb'))
 
 subfolders = [ f.path for f in os.scandir(path) if f.is_dir() ]
@@ -99,10 +96,6 @@ features_train = encoder.predict(image_data)
 #clf = SVC(kernel='linear')
 #clf = clf.fit(features_train, y_train)
 
-
-
-
-
 indexes = list(range(0, image_data.shape[0]))
 
 
@@ -123,7 +116,7 @@ print(filenames)
     w.writerow(data.keys())
     w.writerow(data.values())'''
 field_names = ['index', 'predictions', 'filenames']
-with open(project_path+'output/MRI_Sequence_Results.txt', 'w') as csvfile:
+with open(out_path+'MRI_Sequence_Results.txt', 'w') as csvfile:
 	'''writer = csv.writer(csvfile, fieldnames = field_names)
 	writer.writeheader()
 	writer.writerow(data.keys())
@@ -136,10 +129,3 @@ with open(project_path+'output/MRI_Sequence_Results.txt', 'w') as csvfile:
 '''predictions = clf1.predict(features_test)
 acc = accuracy_score(y_test, predictions)
 print(acc)'''
-# PLOT EVERYTHING
-'''plt.scatter(X1[:,0], X1[:,1], color='r')
-plt.scatter(X2[:,0], X2[:,1], color='b')
-plt.scatter(X3[:,0], X3[:,1], color='y')
-plt.contourf(xx,yy,Z,cmap=plt.cm.coolwarm, alpha=0.8)
-plt.title("SVM With Linear Kernel and Three Labels (0, 1, 2)")
-plt.show()'''
