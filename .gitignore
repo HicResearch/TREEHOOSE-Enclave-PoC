@@ -128,5 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-output/autoencoderMRI.h5
-output/MRI_Sequence_SVMClassifier.pkl
+Main/output/autoencoderMRI.h5
+Main/output/MRI_Sequence_SVMClassifier.pkl
